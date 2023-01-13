@@ -65,21 +65,21 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleDownClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleDownClick}>
           Convert to Lowercase
         </button>
         <button
           type="submit"
           onClick={speak}
           id="toggle"
-          className="btn btn-primary mx-1"
+          className="btn btn-primary mx-1 my-1"
         >
           speak
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>
           Remove Extra Spaces
         </button>
       </div>
@@ -89,7 +89,7 @@ export default function TextForm(props) {
       >
         <h1>Your Text Summary</h1>
         <p>
-          {text.split(" ").length-1} words and {text.length} characters
+          {text.split(" ").filter(/\s+/).length} words and {text.length} characters
         </p>
         <h2>Preview</h2>
         <p>{text}</p>
